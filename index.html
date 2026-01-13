@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Siddhant Senapati | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Siddhant Senapati – Software Engineer Portfolio"
+    />
+    <meta
+      name="keywords"
+      content="Siddhant Senapati, Software Engineer, Portfolio, Developer"
+    />
+    <meta name="author" content="Siddhant Senapati" />
+
+    <!-- Firebase -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBbxrAfCuLHQPZGgL2r0R3Skn8LTgl9lWQ",
+        authDomain: "siddhantsenapati-968cd.firebaseapp.com",
+        projectId: "siddhantsenapati-968cd",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      window.db = db;
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .card {
+        background: white;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+        max-width: 700px;
+      }
+      h1 {
+        font-size: 48px;
+        margin: 0;
+      }
+      h2 {
+        color: #6366f1;
+        margin-top: 10px;
+      }
+      p {
+        font-size: 18px;
+        color: #475569;
+        margin-top: 20px;
+      }
+      .footer {
+        margin-top: 40px;
+        color: #94a3b8;
+      }
+      .maint {
+        background: #0f172a;
+        color: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">Loading…</div>
+
+    <script type="module">
+      import {
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+      const appDiv = document.getElementById("app");
+
+      async function loadSite() {
+        const snap = await getDoc(doc(db, "site", "main"));
+
+        if (!snap.exists()) {
+          appDiv.innerHTML = "<h1>Site not configured</h1>";
+          return;
+        }
+
+        const d = snap.data();
+
+        if (d.maintenance === true) {
+          appDiv.innerHTML = `
+      <div class="maint">
+        <h1>🚧 Under Maintenance</h1>
+        <p>We are upgrading the site. Please check back shortly.</p>
+      </div>
+    `;
+          return;
+        }
+
+        appDiv.innerHTML = `
+    <div class="hero">
+      <div class="card">
+        <h1>${d.name}</h1>
+        <h2>${d.role}</h2>
+        <p>${d.bio}</p>
+
+        <div class="footer">
+          © ${new Date().getFullYear()} ${d.name} · All rights reserved
+        </div>
+      </div>
+    </div>
+  `;
+      }
+
+      loadSite();
+    </script>
+  </body>
+</html>
