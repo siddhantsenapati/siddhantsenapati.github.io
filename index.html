@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title id="dynamic-title">Siddhant Senapati | Technical Lead & Observability Specialist</title>
+    <meta name="description" id="meta-desc" content="Portfolio of Siddhant Senapati...">
+    <meta name="keywords" id="meta-keywords" content="Siddhant Senapati, Technical Lead...">
+    <meta name="author" id="meta-author" content="Siddhant Senapati">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "90617597ffed443b8ad6237fc16bd063"}'></script><!-- End Cloudflare Web Analytics -->
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar fade-in-down">
+        <div class="logo">Portfolio<span></span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-contact">Contact Me</a></li>
+            </ul>
+            <div class="nav-extras">
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-sun"></i></button>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="greeting fade-in-up" style="animation-delay: 0.2s;">Hello, I'm</span>
+            <h1 class="fade-in-up" style="animation-delay: 0.4s;">Siddhant Senapati</h1>
+            <h2 class="fade-in-up" style="animation-delay: 0.6s;"><span id="hero-position">Technical Lead</span> & <span class="highlight">Observability Specialist</span></h2>
+            <p class="fade-in-up" style="animation-delay: 0.8s;">Transforming system reliability with <span id="hero-total-exp">7+</span> years of expertise in AppDynamics, Dynatrace, and Full Stack Engineering.</p>
+            <div class="hero-btns fade-in-up" style="animation-delay: 1s;">
+                <a href="#projects" class="btn primary">View Work</a>
+                <a id="hero-resume" href="#" class="btn secondary" target="_blank">Download CV <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p id="about-text">Loading...</p>
+                    <div class="stats">
+                        <div class="stat-item"><h3 id="total-exp-number">7+</h3><p>Total Experience</p></div>
+                        <div class="stat-item"><h3>12+</h3><p>Team Size Led</p></div>
+                        <div class="stat-item"><h3 id="stat-proj">10+</h3><p>Projects Delivered</p></div>
+                        <div class="stat-item"><h3 id="stat-cust">60+</h3><p>Customer Onboarded</p></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline" id="experience-list"><div class="text-center">Loading experience...</div></div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="skills-grid" id="skills-container"></div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid" id="projects-list"></div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="list-grid" id="education-list"></div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid" id="certifications-list"></div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievement-list" id="achievements-list"></div>
+        </div>
+    </section>
+
+    <section id="training" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Training & Courses</h2>
+            <div class="list-grid" id="training-list"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">Open to opportunities in <strong>Observability Engineering</strong> and <strong>Technical Leadership</strong>.</p>
+            <div class="social-links">
+                <a id="link-email" href="#" target="_blank" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
+                <a id="link-linkedin" href="#" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a id="link-github" href="#" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <footer><p>&copy; <span id="year"></span> All Rights Reserved. Design and Developed by Siddhant Senapati</p></footer>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
